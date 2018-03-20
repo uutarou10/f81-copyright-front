@@ -32,7 +32,7 @@ const getCsrfTokenFromResponse = (response) => {
 }
 
 const user = {
-  login: async ({email, password}) => {
+  login: async (email, password) => {
     const response = await axios.post('/users/sign_in', {
       user: {
         email,
@@ -47,7 +47,7 @@ const user = {
     updateCsrfToken(getCsrfTokenFromResponse(response))
     return response;
   },
-  register: async ({email, password, password_confirmation}) => {
+  register: async (email, password, password_confirmation) => {
     const response = await axios.post('/users', {
       user: {
         email,
