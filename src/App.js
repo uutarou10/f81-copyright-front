@@ -6,6 +6,7 @@ import {Provider} from 'react-redux'
 import store from './store'
 import Top from './screens/Top'
 import Register from './screens/Register'
+import Login from './screens/Login'
 
 class App extends Component {
   render() {
@@ -15,9 +16,11 @@ class App extends Component {
           <div>
             <Link to="/">top</Link>
             <Link to="/register">register</Link>
+            <Link to="/login">login</Link>
             <hr />
             <Route exact path="/" component={Top} />
             <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
           </div>
         </Router>
       </Provider>

@@ -23,6 +23,13 @@ export const requestRegisterUser = (email, password, password_confirmation) => {
   }
 } 
 
+export const requestLogin = (email, password) => {
+  return dispatch => {
+    const response = api.user.login(email, password)
+    dispatch(setUser(response.data.id, response.data.email))
+  }
+}
+
 export const completeRegisterUser = () => {
   return {
     type: COMPLETE_REGISTER_USER
