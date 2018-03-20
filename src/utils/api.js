@@ -1,6 +1,10 @@
 import axios from 'axios'
 
 const getCsrfToken = () => {
+  if (process.env.NODE_ENV === 'development') {
+    return 'dummy-csrf-token'
+  }
+
   if (!(axios.defaults.headers.common['X-CSRF-Token'])) {
     return (
       document.getElementsByName('csrf-token')[0].getAttribute('content')
