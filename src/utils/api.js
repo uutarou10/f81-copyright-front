@@ -36,12 +36,12 @@ const user = {
       }
     })
     updateCsrfToken(getCsrfTokenFromResponse(response))
-    return result;
+    return response;
   },
   logout: async () => {
     const response = await axios.delete('/users/sign_out')
     updateCsrfToken(getCsrfTokenFromResponse(response))
-    return result;
+    return response;
   },
   register: async ({email, password, password_confirmation}) => {
     const response = await axios.post('/users', {
