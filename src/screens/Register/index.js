@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {Button, Form} from 'semantic-ui-react'
+import {connect} from 'react-redux'
 
-export default class Register extends Component {
+class Register extends Component {
   constructor(props) {
     super(props)
     this.onSubmit = this.onSubmit.bind(this)
@@ -53,3 +54,5 @@ export default class Register extends Component {
     )
   }
 }
+
+export default Register
