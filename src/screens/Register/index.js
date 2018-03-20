@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {Button, Form} from 'semantic-ui-react'
+import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
+import {setUser, requestRegisterUser}  from '../../actions/userActions'
 
 class Register extends Component {
   constructor(props) {
@@ -14,7 +16,11 @@ class Register extends Component {
   }
 
   onSubmit() {
-    console.log(this.state)
+    this.props.requestRegisterUser(
+      this.state.draftEmail,
+      this.state.draftPassword,
+      this.state.draftPasswordConfirmation
+    )
   }
 
   render() {
@@ -55,4 +61,9 @@ class Register extends Component {
   }
 }
 
-export default Register
+const mapDispatchToProps = dispatch => ({
+  setUser: bindActionCreators(setUser, dispatch),
+  requestRegisterUser: bindActionCreators(requestRegisterUser, dispatch)
+})
+
+export default connect(null, mapDispatchToProps)(Register) 
