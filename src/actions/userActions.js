@@ -17,8 +17,9 @@ const setUser = (id, email) => {
 
 const requestRegisterUser = (email, password, password_confirmation) => {
   return dispatch => {
-    api.user.register(email, password, password_confirmation)
-    dispatch(completeRegisterUser)
+    const response = api.user.register(email, password, password_confirmation)
+    dispatch(setUser(response.data.id, response.data.email))
+    dispatch(completeRegisterUser())
   }
 } 
 

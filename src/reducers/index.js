@@ -1,20 +1,8 @@
 // 各Reducerをまとめる
 import {combineReducers} from 'redux'
-import actionTypes from './actionTypes'
 
-const user = (state={}, action) => {
-  switch (action.type) {
-    case actionTypes.SET_USER:
-      return Object.assign({}, state, {
-        id: action.payload.id
-      })
-    
-    case actionTypes.UNSET_USER:
-      return {}
-    
-      default:
-        return state
-  }
-}
+import userReducer from './user'
 
-const rootReducer = combineReducers(user)
+const rootReducer = combineReducers(
+  userReducer
+)
