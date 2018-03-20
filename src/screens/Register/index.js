@@ -61,9 +61,9 @@ class Register extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  setUser: bindActionCreators(setUser, dispatch),
-  requestRegisterUser: bindActionCreators(requestRegisterUser, dispatch)
-})
+const mapDispatchToProps = dispatch => (bindActionCreators({
+  setUser,
+  requestRegisterUser
+}, dispatch))
 
 export default connect(null, mapDispatchToProps)(Register) 
