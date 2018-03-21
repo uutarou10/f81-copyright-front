@@ -9,6 +9,7 @@ export const requestPost = (title) => {
   return async dispatch => {
     const response = await api.post.post(title)
     dispatch(completePostPhoto())
+    dispatch(push('/posts/' + response.data.result.id))
   }
 }
 
