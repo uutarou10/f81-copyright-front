@@ -1,0 +1,30 @@
+.fullDiv {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  position: fixed;
+  background-color: LightGrey;
+}
+
+.mainImage {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 5vw;
+  left: 5vw;
+  background-image: url("../images/background.png");
+  background-repeat: no-repeat;
+}
+
+.mainDiv {
+  position: relative;
+  top: 5vw;
+  left: 700px;
+  background-color: white;
+  width: 500px;
+  height: 300px;
+  border: 3px white solid;  
+  border-radius: 10px;
+}
