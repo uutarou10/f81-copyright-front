@@ -61,7 +61,7 @@ const user = {
 const post = {
   post: async (title) => {
     const formData = new FormData()
-    formData.append('post[photo]', document.getElementsByName('photo')[0].files[0])
+    formData.append('post[image]', document.getElementsByName('photo')[0].files[0])
     formData.append('post[title]', title)
 
     const response = await axios.post('/posts', formData)
