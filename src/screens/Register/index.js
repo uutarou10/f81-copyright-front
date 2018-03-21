@@ -17,8 +17,15 @@ class Register extends Component {
     this.state = {
       draftEmail: '',
       draftPassword: '',
-      draftPasswordConfirmation: ''
+      draftPasswordConfirmation: '',
+      notValidate: true,
     }
+  }
+
+  isInvalid() {
+    return (
+      this.state.draftEmail === '' || this.state.draftPassword === '' || this.state.draftPassword !== this.state.draftPasswordConfirmation
+    )
   }
 
   onSubmit() {
@@ -66,7 +73,7 @@ class Register extends Component {
 
           </div>
           <div className="top2" >
-            <Button style={styles.button} type="submit" onClick={this.onSubmit}>登録する</Button>
+            <Button disabled={this.isInvalid()} style={styles.button} type="submit" onClick={this.onSubmit}>登録する</Button>
             <Button style={styles.button} onClick={() => this.props.push('/')}>TOP</Button>
           </div>
           </Form>
