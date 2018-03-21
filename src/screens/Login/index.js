@@ -3,6 +3,7 @@ import {Button, Form} from 'semantic-ui-react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {requestLogin} from '../../actions/userActions'
+import {push} from 'react-router-redux'
 
 // import style
 import '../../styles/main.css'
@@ -51,7 +52,7 @@ class Login extends Component {
           </div>
           <div className="top2" >
             <Button style={styles.button} type="submit" onClick={this.onSubmit}>ログイン</Button>
-            <Button style={styles.button} onClick={() => linkTo('/')}>TOP</Button>
+            <Button style={styles.button} onClick={() => console.log(this.props.push('/')) }>TOP</Button>
           </div>
           </Form>
         </div>
@@ -60,10 +61,9 @@ class Login extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({requestLogin},dispatch)
-
-function linkTo(path) {
-  window.location.href = path
-}
+const mapDispatchToProps = dispatch => bindActionCreators({
+  requestLogin,
+  push
+},dispatch)
 
 export default connect(null, mapDispatchToProps)(Login)

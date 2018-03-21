@@ -3,6 +3,7 @@ import {Button, Form} from 'semantic-ui-react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import {setUser, requestRegisterUser}  from '../../actions/userActions'
+import {push} from 'react-router-redux'
 
 // import style
 import '../../styles/main.css'
@@ -66,7 +67,7 @@ class Register extends Component {
           </div>
           <div className="top2" >
             <Button style={styles.button} type="submit" onClick={this.onSubmit}>登録する</Button>
-            <Button style={styles.button} onClick={() => linkTo('/')}>TOP</Button>
+            <Button style={styles.button} onClick={() => this.props.push('/')}>TOP</Button>
           </div>
           </Form>
         </div>
@@ -77,11 +78,8 @@ class Register extends Component {
 
 const mapDispatchToProps = dispatch => (bindActionCreators({
   setUser,
-  requestRegisterUser
+  requestRegisterUser,
+  push
 }, dispatch))
-
-function linkTo(path) {
-  window.location.href = path
-}
 
 export default connect(null, mapDispatchToProps)(Register) 
