@@ -37,10 +37,37 @@
   background-repeat: no-repeat;
 }
 
+.postImage {
+  height: 100%;
+}
+
+.postImageDiv {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  background-repeat: no-repeat;
+}
+
+.center{
+  text-align: center;
+}
+
 .formDiv {
   position: relative;
   top: 5vw;
   left: 700px;
+  background-color: white;
+  width: 500px;
+  height: 400px;
+  border: 3px white solid;  
+  border-radius: 10px;
+  opacity:0.8;
+}
+
+.postDiv {
+  position: relative;
+  top: 7vw;
+  margin: auto;
   background-color: white;
   width: 500px;
   height: 400px;

@@ -4,6 +4,11 @@ import {requestPost} from '../../actions/postActions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
+// import style
+import '../../styles/main.css'
+import { styles } from "../../styles/style";
+
+
 class Post extends Component {
   constructor(props) {
     super(props)
@@ -19,26 +24,31 @@ class Post extends Component {
 
   render() {
     return (
-      <div>
-        <p>Logined as {this.props.user.email || 'guest'}</p>
-        <Form>
-          <Form.Field>
-            <label>Title</label>
-            <input
-              type="text"
-              placeholder="your photo title"
-              onChange={e => this.setState({draftTitle: e.target.value})}
-            />
-          </Form.Field>
-          <Form.Field>
-            <label>File</label> 
-            <input type="file" name="photo" />
-          </Form.Field>
-          <Button
-            type="submit"
-            onClick={this.onSubmit}
-          >Sent</Button>
-        </Form>
+      <div className="fullDiv" >
+        <div className="postImageDiv center">
+          <img className="postImage" src={require("../../images/box.png")} />
+        </div>
+        <div className="postDiv" >
+          <p>Logined as {this.props.user.email || 'guest'}</p>
+          <Form>
+            <Form.Field>
+              <label>Title</label>
+              <input
+                type="text"
+                placeholder="your photo title"
+                onChange={e => this.setState({draftTitle: e.target.value})}
+              />
+            </Form.Field>
+            <Form.Field>
+              <label>File</label> 
+              <input type="file" name="photo" />
+            </Form.Field>
+            <Button
+              type="submit"
+              onClick={this.onSubmit}
+            >送信</Button>
+          </Form>
+        </div>
       </div>
     )
   }
