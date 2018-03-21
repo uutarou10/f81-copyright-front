@@ -19,30 +19,37 @@ class Post extends Component {
 
   render() {
     return (
-      <Form>
-        <Form.Field>
-          <label>Title</label>
-          <input
-            type="text"
-            placeholder="your photo title"
-            onChange={e => this.setState({draftTitle: e.target.value})}
-          />
-        </Form.Field>
-        <Form.Field>
-          <label>File</label>
-          <input type="file" name="photo" />
-        </Form.Field>
-        <Button
-          type="submit"
-          onClick={this.onSubmit}
-        >Sent</Button>
-      </Form>
+      <div>
+        <p>Logined as {this.props.user.email}</p>
+        <Form>
+          <Form.Field>
+            <label>Title</label>
+            <input
+              type="text"
+              placeholder="your photo title"
+              onChange={e => this.setState({draftTitle: e.target.value})}
+            />
+          </Form.Field>
+          <Form.Field>
+            <label>File</label> 
+            <input type="file" name="photo" />
+          </Form.Field>
+          <Button
+            type="submit"
+            onClick={this.onSubmit}
+          >Sent</Button>
+        </Form>
+      </div>
     )
   }
+}
+
+const mapStateToProps = state => {
+  user: state.user
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   requestPost
 }, dispatch)
 
-export default connect(null, mapDispatchToProps)(Post)
+export default connect(mapStateToProps, mapDispatchToProps)(Post)
