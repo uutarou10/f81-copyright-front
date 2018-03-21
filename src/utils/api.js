@@ -2,10 +2,6 @@ import axios from 'axios'
 import apiUrl from '../constants/apiUrl'
 
 const getCsrfToken = () => {
-  if (process.env.NODE_ENV === 'development') {
-    return 'dummy-csrf-token'
-  }
-
   if (!(axios.defaults.headers.common['X-CSRF-Token'])) {
     return (
       document.getElementsByName('csrf-token')[0].getAttribute('content')
@@ -62,6 +58,23 @@ const user = {
   }
 }
 
+const post = {
+  post: async (title) => {
+    const formData = new FormData()
+    formData.append('post[photo]', document.getElementsByName('photo'))
+    formData.append('post[title]', title)
+
+    const response = await axios.post('/posts', formData)
+    updateCsrfToken(getCsrfTokenFromResponse(response))
+
+    return response
+  },
+  get: async (id) => {
+    await 
+  }
+}
+
 export default {
-  user
+  user,
+  post
 }
