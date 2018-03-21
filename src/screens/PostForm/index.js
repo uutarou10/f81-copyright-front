@@ -3,7 +3,6 @@ import {Button, Form} from 'semantic-ui-react'
 import {requestPost} from '../../actions/postActions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import { header } from '../../utils/header'
 import { requestLogout } from "../../actions/userActions";
 // import style
 import '../../styles/main.css'
@@ -33,12 +32,10 @@ class Post extends Component {
     return (
       <div className="fullDiv" >
         <div className="header" >
-        <p>ログイン中</p>
-        <div className="logout" >
-          <Button onClick={() => this.logout()} >ログアウト</Button>
+          <div className="logout" >
+            <Button onClick={() => this.logout()} >ログアウト</Button>
+          </div>
         </div>
-        
-      </div>
         <div className="postImageDiv center">
           <img className="postImage" src={require("../../images/postImage.png")} />
         </div>
