@@ -1,19 +1,21 @@
 import React from 'react'
 import { Button, Segment } from 'semantic-ui-react'
-import store from "../store";
-import {  } from "../actions/userActions";
-export function header(value) {
+
+export function header(value, logout) {
   if (value !== null) {
     return (
       <div className="header" >
         <p>ログイン中</p>
         <div className="logout" >
-          <Button  >ログアウト</Button>
+          <Button onClick={() => logout()} >ログアウト</Button>
         </div>
         
       </div>
     )
-  }else (
-    <div className="header" />
-  )
+  }else {
+    return (
+      <div className="header">
+      </div>
+    )
+  }
 }

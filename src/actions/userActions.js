@@ -26,7 +26,7 @@ export const logout = () => {
 
 export const requestLogout = () => {
   return async dispatch => {
-    await api.user.logout
+    await api.user.logout()
     dispatch(logout())
   }
 }
