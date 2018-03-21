@@ -44,6 +44,7 @@ class Post extends Component {
               <input type="file" name="photo" />
             </Form.Field>
             <Button
+              style={styles.button}
               type="submit"
               onClick={this.onSubmit}
             >送信</Button>
