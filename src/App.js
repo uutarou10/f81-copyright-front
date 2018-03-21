@@ -9,7 +9,7 @@ import store from './store'
 import Top from './screens/Top'
 import Register from './screens/Register'
 import Login from './screens/Login'
-import Post from './screens/Post'
+import PostForm from './screens/PostForm'
 
 class App extends Component {
   render() {
@@ -25,7 +25,7 @@ class App extends Component {
             <Route exact path="/" component={Top} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
-            <Route path="/posts" component={Post} />
+            <Route path="/posts" component={PostForm} />
           </div>
         </ConnectedRouter>
       </Provider>
