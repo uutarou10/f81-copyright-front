@@ -9,7 +9,7 @@ export const requestPost = (title) => {
   return async dispatch => {
     const response = await api.post.post(title)
     dispatch(completePostPhoto())
-    dispatch(push('/posts/' + response.data.result.id))
+    dispatch(push('/images/' + response.data.result.id))
   }
 }
 
@@ -24,7 +24,7 @@ export const getPost = id => {
       response.data.result.isPakuri
     ))
 
-    dispatch(push('/posts/' + id))
+    dispatch(push('/images/' + id))
   }
 }
 

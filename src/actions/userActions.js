@@ -43,7 +43,7 @@ export const requestLogin = (email, password) => {
   return async dispatch => {
     const response = await api.user.login(email, password)
     dispatch(setUser(response.data.result.user.id, response.data.result.user.email))
-    dispatch(push('/posts'))
+    dispatch(push('/images'))
   }
 }
  

@@ -26,8 +26,8 @@ class App extends Component {
             <Route exact path="/" component={Top} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
-            <Route exact path="/posts" component={PostForm} />
-            <Route path="/posts/:id" component={Post} />
+            <Route exact path="/images" component={PostForm} />
+            <Route path="/images/:id" component={Post} />
           </div>
         </ConnectedRouter>
       </Provider>
