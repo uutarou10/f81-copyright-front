@@ -8,7 +8,7 @@ export default () => {
   return (
     <div className="fullDiv" >
       <div className="mainImage" />
-      <div className="mainDiv" >
+      <div className="formDiv" >
         <div className="top1" >
           <p>this is top page!</p>
         </div>

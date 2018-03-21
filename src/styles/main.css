@@ -8,6 +8,15 @@
   background-color: LightGrey;
 }
 
+.imageBox {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 5vw;
+  left: 5vw;
+  background-repeat: no-repeat;
+}
+
 .mainImage {
   height: 100%;
   width: 100%;
@@ -18,7 +27,17 @@
   background-repeat: no-repeat;
 }
 
-.mainDiv {
+.registerImage {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 5vw;
+  left: 5vw;
+  background-image: url("../images/registerImage.png");
+  background-repeat: no-repeat;
+}
+
+.formDiv {
   position: relative;
   top: 5vw;
   left: 700px;
