@@ -95,3 +95,18 @@
   width: 100%;
   text-align: center;
 }
+
+.header {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 40px;
+  background-color: white;
+  opacity: 0.8;
+}
+
+.logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
