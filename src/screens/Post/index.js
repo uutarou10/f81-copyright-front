@@ -1,12 +1,16 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import {getPost} from '../../actions/postActions'
 
 class Post extends Component {
   constructor(props) {
     super(props)
   }
 
-  
+  componentDidMount() {
+    this.props.getPost(this.props.match.params.id)
+  }
 
   render() {
     return (
@@ -20,6 +24,10 @@ class Post extends Component {
 
 const mapStateToProps = state => ({
   post: state.post
-})
+}) 
 
-export default connect(mapStateToProps, null)(Post)
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getPost
+}, dispatch)
+
+export default connect(mapStateToProps, mapDispatchToProps)(Post)
