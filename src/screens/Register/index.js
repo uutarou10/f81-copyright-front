@@ -34,6 +34,7 @@ class Register extends Component {
         <div className="imageBox registerImage" />
           <div className="formDiv" >
           <Form>
+          <div className="top1" >
             <Form.Field>
               <label>Email Address</label>
               <input
@@ -61,7 +62,11 @@ class Register extends Component {
                 onChange={(e) => this.setState({draftPasswordConfirmation: e.target.value})}
               />
             </Form.Field>
+
+          </div>
+          <div className="top2" >
             <Button style={styles.button} type="submit" onClick={this.onSubmit}>登録する</Button>
+          </div>
           </Form>
         </div>
       </div>
