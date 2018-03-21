@@ -18,7 +18,7 @@ export const setUser = (id, email) => {
 export const requestRegisterUser = (email, password, password_confirmation) => {
   return dispatch => {
     const response = api.user.register(email, password, password_confirmation)
-    dispatch(setUser(response.data.result.id, response.data.result.email))
+    dispatch(setUser(response.data.result.user.id, response.data.result.user.email))
     dispatch(completeRegisterUser())
   }
 } 
@@ -26,7 +26,7 @@ export const requestRegisterUser = (email, password, password_confirmation) => {
 export const requestLogin = (email, password) => {
   return dispatch => {
     const response = api.user.login(email, password)
-    dispatch(setUser(response.data.result.id, response.data.result.email))
+    dispatch(setUser(response.data.result.user.id, response.data.result.user.email))
   }
 }
 
