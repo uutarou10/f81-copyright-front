@@ -1,4 +1,5 @@
 import axios from 'axios'
+import apiUrl from '../constants/apiUrl'
 
 const getCsrfToken = () => {
   if (process.env.NODE_ENV === 'development') {
@@ -17,6 +18,7 @@ const getCsrfToken = () => {
 };
 
 const setAxiosDefaults = () => {
+  axios.defaults.baseURL = apiUrl
   axios.defaults.headers.common['X-CSRF-Token'] = getCsrfToken();
   axios.defaults.headers.common['Accept'] = 'application/json';
 };
