@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import { header } from '../../utils/header'
 
 class Post extends Component {
   constructor(props) {
