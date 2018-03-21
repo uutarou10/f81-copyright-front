@@ -26,7 +26,7 @@ class Post extends Component {
     return (
       <div className="fullDiv" >
         <div className="postImageDiv center">
-          <img className="postImage" src={require("../../images/box.png")} />
+          <img className="postImage" src={require("../../images/postImage.png")} />
         </div>
         <div className="postDiv" >
           <p>Logined as {this.props.user.email || 'guest'}</p>
