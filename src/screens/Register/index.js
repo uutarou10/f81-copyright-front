@@ -66,6 +66,7 @@ class Register extends Component {
           </div>
           <div className="top2" >
             <Button style={styles.button} type="submit" onClick={this.onSubmit}>登録する</Button>
+            <Button style={styles.button} onClick={() => linkTo('/')}>TOP</Button>
           </div>
           </Form>
         </div>
@@ -78,5 +79,9 @@ const mapDispatchToProps = dispatch => (bindActionCreators({
   setUser,
   requestRegisterUser
 }, dispatch))
+
+function linkTo(path) {
+  window.location.href = path
+}
 
 export default connect(null, mapDispatchToProps)(Register) 
