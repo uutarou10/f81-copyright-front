@@ -13,6 +13,7 @@ class Login extends Component {
   constructor(props) {
     super(props)
     this.onSubmit = this.onSubmit.bind(this)
+    this.isInvalid = this.isInvalid.bind(this)
     this.state = {
       draftEmail: '',
       draftPassword: ''
@@ -51,13 +52,17 @@ class Login extends Component {
           </Form.Field>
           </div>
           <div className="top2" >
-            <Button style={styles.button} type="submit" onClick={this.onSubmit}>ログイン</Button>
+            <Button style={styles.button} disabled={this.isInvalid()} type="submit" onClick={this.onSubmit}>ログイン</Button>
             <Button style={styles.button} onClick={() => console.log(this.props.push('/')) }>TOP</Button>
           </div>
           </Form>
         </div>
       </div>
     )
+  }
+
+  isInvalid() {
+    return this.state.draftEmail === '' || this.state.draftPassword === ''
   }
 }
 
