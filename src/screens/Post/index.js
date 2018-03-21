@@ -20,7 +20,7 @@ class Post extends Component {
   render() {
     return (
       <div>
-        <p>Logined as {this.props.user.email}</p>
+        <p>Logined as {this.props.user.email || 'guest'}</p>
         <Form>
           <Form.Field>
             <label>Title</label>
@@ -44,10 +44,12 @@ class Post extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  user: state.user
+const mapStateToProps = (state) => {
+  console.log(state)
+  return {
+    user: state.user
+  }
 }
-
 const mapDispatchToProps = dispatch => bindActionCreators({
   requestPost
 }, dispatch)
