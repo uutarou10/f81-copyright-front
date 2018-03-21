@@ -13,7 +13,13 @@ const Top = ({push, user}) => {
       <div className="mainImage" />
       <div className="formDiv" >
         <div className="top1" >
-          <p>this is top page!</p>
+        <div className="center" >
+          <img className="titleImage" src={require("../../images/title_1.png")} />
+        </div>
+          <p className="titleText" >
+            ブロックチェーンを用いた著作権保護サービス<br />
+            あなたの独創的なアイデアを守ります
+          </p>
         </div>
         <div className="top2" >
           {user.isLogined ? (

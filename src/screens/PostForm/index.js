@@ -3,6 +3,7 @@ import {Button, Form} from 'semantic-ui-react'
 import {requestPost} from '../../actions/postActions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
+import { header } from '../../utils/header'
 
 // import style
 import '../../styles/main.css'
@@ -25,6 +26,7 @@ class Post extends Component {
   render() {
     return (
       <div className="fullDiv" >
+        { header(this.props.user.email) }
         <div className="postImageDiv center">
           <img className="postImage" src={require("../../images/postImage.png")} />
         </div>

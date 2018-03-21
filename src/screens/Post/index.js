@@ -6,6 +6,8 @@ class Post extends Component {
     super(props)
   }
 
+  
+
   render() {
     return (
       <div>
