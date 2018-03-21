@@ -70,7 +70,10 @@ const post = {
     return response
   },
   get: async (id) => {
-    await 
+    const response = await axios.get('/posts/' + id)
+    updateCsrfToken(getCsrfTokenFromResponse(response))
+
+    return response
   }
 }
 
