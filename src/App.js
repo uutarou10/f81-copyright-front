@@ -18,12 +18,12 @@ class App extends Component {
             <Link to="/">top</Link>
             <Link to="/register">register</Link>
             <Link to="/login">login</Link>
-            <Link to="/post">post</Link>
+            <Link to="/posts">post</Link>
             <hr />
             <Route exact path="/" component={Top} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
-            <Route path="/post" component={Post} />
+            <Route path="/posts" component={Post} />
           </div>
         </Router>
       </Provider>
