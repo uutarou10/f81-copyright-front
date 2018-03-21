@@ -17,6 +17,8 @@ class Post extends Component {
       <div>
         <h2>{this.props.post.title}</h2>
         <img src={this.props.post.image_path} />
+        <p>{`Timestamp: ${this.props.post.timestamp}`}</p>
+        <p>{`この画像はパクリ${this.props.post.isPakuri ? 'です!' : 'ではありません。'}`}</p>
       </div>
     )
   }
