@@ -26,8 +26,8 @@ export const requestRegisterUser = (email, password, password_confirmation) => {
 } 
 
 export const requestLogin = (email, password) => {
-  return dispatch => {
-    const response = api.user.login(email, password)
+  return async dispatch => {
+    const response = await api.user.login(email, password)
     dispatch(setUser(response.data.result.user.id, response.data.result.user.email))
     dispatch(push('/posts'))
   }
