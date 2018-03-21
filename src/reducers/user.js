@@ -1,6 +1,7 @@
 import {
   SET_USER,
-  COMPLETE_REGISTER_USER
+  COMPLETE_REGISTER_USER,
+  LOGOUT
 } from '../constants/ActionTypes'
 
 const initialState = {
@@ -17,6 +18,9 @@ export default (state = initialState, action) => {
         id: action.payload.id,
         email: action.payload.email
       })
+    
+    case LOGOUT:
+      return initialState
 
     case COMPLETE_REGISTER_USER:
       return state

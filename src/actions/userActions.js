@@ -2,7 +2,8 @@ import api from '../utils/api'
 import {
   SET_USER,
   COMPLETE_REGISTER_USER,
-  COMPLETE_LOGIN
+  COMPLETE_LOGIN,
+  LOGOUT
 } from '../constants/ActionTypes'
 import {push} from 'react-router-redux'
 
@@ -14,6 +15,19 @@ export const setUser = (id, email) => {
       id,
       email
     }
+  }
+}
+
+export const logout = () => {
+  return {
+    type: LOGOUT
+  }
+}
+
+export const requestLogout = () => {
+  return async dispatch => {
+    await api.user.logout
+    dispatch(logout())
   }
 }
 
