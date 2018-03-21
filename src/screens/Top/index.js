@@ -7,7 +7,7 @@ import {push} from 'react-router-redux'
 import {bindActionCreators} from 'redux'
 
 
-const Top = ({push}) => {
+const Top = ({push, user}) => {
   return (
     <div className="fullDiv" >
       <div className="mainImage" />
@@ -22,16 +22,27 @@ const Top = ({push}) => {
           </p>
         </div>
         <div className="top2" >
-          <Button onClick={() => push('/login')} style={styles.button} >ログイン</Button>
-          <Button onClick={() => push('/register')} style={styles.button} >登録</Button>
+          {user.isLogined ? (
+            <Button onClick={() => push('/posts')} style={styles.button} >投稿</Button>
+          ) : (
+            <div>
+              <Button onClick={() => push('/login')} style={styles.button} >ログイン</Button>
+              <Button onClick={() => push('/register')} style={styles.button} >登録</Button>
+              <Button onClick={() => push('/posts/100')} style={styles.button} >登録</Button>
+            </div>
+          )}
         </div>
       </div>
     </div>
   )
 }
 
+const mapStateToProps = state => ({
+  user: state.user
+})
+
 const mapDispatchToProps = dispatch => bindActionCreators({
   push
 }, dispatch)
 
-export default connect(null, mapDispatchToProps)(Top)
+export default connect(mapStateToProps, mapDispatchToProps)(Top)

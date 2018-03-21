@@ -1,6 +1,8 @@
 export const SET_USER = 'SET_USER'
 export const REQUEST_REGISTER_USER = 'REQUEST_REGISTER_USER'
 export const COMPLETE_REGISTER_USER = 'COMPLETE_REGISTER_USER'
+export const LOGOUT = 'LOGOUT'
 
 // Photo
 export const COMPLETE_POST_PHOTO = 'COMPLETE_POST_PHOTO'
+export const SET_POST = 'SET_POST'
