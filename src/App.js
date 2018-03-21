@@ -10,6 +10,7 @@ import Top from './screens/Top'
 import Register from './screens/Register'
 import Login from './screens/Login'
 import PostForm from './screens/PostForm'
+import Post from './screens/Post'
 
 class App extends Component {
   render() {
@@ -25,7 +26,8 @@ class App extends Component {
             <Route exact path="/" component={Top} />
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />
-            <Route path="/posts" component={PostForm} />
+            <Route exact path="/posts" component={PostForm} />
+            <Route path="/posts/:id" component={Post} />
           </div>
         </ConnectedRouter>
       </Provider>

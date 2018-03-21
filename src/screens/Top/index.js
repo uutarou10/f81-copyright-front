@@ -22,6 +22,7 @@ const Top = ({push, user}) => {
             <div>
               <Button onClick={() => push('/login')} style={styles.button} >ログイン</Button>
               <Button onClick={() => push('/register')} style={styles.button} >登録</Button>
+              <Button onClick={() => push('/posts/100')} style={styles.button} >登録</Button>
             </div>
           )}
         </div>
