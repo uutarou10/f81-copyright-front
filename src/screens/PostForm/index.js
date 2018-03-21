@@ -4,7 +4,7 @@ import {requestPost} from '../../actions/postActions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import { header } from '../../utils/header'
-
+import { requestLogout } from "../../actions/userActions";
 // import style
 import '../../styles/main.css'
 import { styles } from "../../styles/style";
@@ -14,6 +14,7 @@ class Post extends Component {
   constructor(props) {
     super(props)
     this.onSubmit = this.onSubmit.bind(this)
+    this.logout = this.logout.bind(this)
     this.state = {
       draftTitle: '',
     }
@@ -23,10 +24,21 @@ class Post extends Component {
     this.props.requestPost(this.state.draftTitle)   
   }
 
+  logout() {
+    console.log(this.props.requestLogout)
+    this.props.requestLogout()
+  }
+
   render() {
     return (
       <div className="fullDiv" >
-        { header(this.props.user.email) }
+        <div className="header" >
+        <p>ログイン中</p>
+        <div className="logout" >
+          <Button onClick={() => this.logout()} >ログアウト</Button>
+        </div>
+        
+      </div>
         <div className="postImageDiv center">
           <img className="postImage" src={require("../../images/postImage.png")} />
         </div>
@@ -64,7 +76,8 @@ const mapStateToProps = (state) => {
   }
 }
 const mapDispatchToProps = dispatch => bindActionCreators({
-  requestPost
+  requestPost,
+  requestLogout
 }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Post)
